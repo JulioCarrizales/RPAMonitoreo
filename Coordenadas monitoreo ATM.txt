@@ -4,3 +4,4 @@ Menú desplegable del nombre de la hoja: 1319, 415
 Botón de cargar: 1106,621
 Botón de salir: 832,618
 Botón de generar reporte: 1057, 624
+Botón de aceptar: 1020, 619
