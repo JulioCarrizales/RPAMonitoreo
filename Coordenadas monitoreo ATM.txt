@@ -5,3 +5,7 @@ Botón de cargar: 1106,621
 Botón de salir: 832,618
 Botón de generar reporte: 1057, 624
 Botón de aceptar: 1020, 619
+Cuadro de búsqueda de Whatsapp: 412, 235
+Símbolo de adjuntar archivos: 989, 952
+Símbolo de documento: 1078, 575
+Botón de enviar: 1858, 951
