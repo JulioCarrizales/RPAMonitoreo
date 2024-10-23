@@ -9,5 +9,10 @@ Botón de aceptar: 1020, 619
 
 Credencial: 
 
-Id: cquevedo
-Contraseña: canales123
+TrueSight
+Id: ATM01
+Contraseña: Teraware
+
+Notifiaciones
+Id: ATM01
+Contraseña: Teraware
