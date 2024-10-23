@@ -4,6 +4,7 @@ import time
 import logging
 import win32com.client as win32
 import pythoncom
+import webbrowser
 
 # Configuración del log para guardar mensajes en un archivo
 logging.basicConfig(filename='carga_datos.log', level=logging.INFO, 
@@ -15,6 +16,7 @@ ruta_excel = os.path.join(ruta_aplicativo, "ggrpt_monitoreo_atms.xlsm")
 
 # Ruta de la carpeta donde están los archivos de datos
 ruta_data = r"C:\Users\Administrador\Desktop\Reporte - copia\DATA"
+ruta_reporte = os.path.join(ruta_aplicativo, "rpt_monitoreo_atms.xlsm")
 
 # Relación de hojas y archivos correspondientes
 archivos_necesarios = {
@@ -34,7 +36,10 @@ COORDENADAS = {
     "boton_cargar": (1106, 621),
     "boton_salir": (832, 618),
     "boton_generar_reporte": (1057, 624),
-    "boton_aceptar_exito": (1020, 619)  # Coordenada ajustada del botón "Aceptar"
+    "boton_aceptar_exito": (1020, 619),  # Coordenada ajustada del botón "Aceptar"
+    "whatsapp_adjuntar": (989, 952),  # Coordenada del icono "adjuntar" en WhatsApp Web
+    "whatsapp_adjuntar_archivo": (1078, 575),  # Coordenada del icono "adjuntar archivo"
+    "whatsapp_enviar": (1858, 951)  # Coordenada del botón "Enviar"
 }
 
 def abrir_excel():
@@ -96,6 +101,44 @@ def cargar_y_aceptar():
     # Esperar el mensaje de éxito y aceptarlo
     esperar_y_aceptar_exito()
 
+def enviar_reporte_por_whatsapp():
+    """Función para enviar el archivo de Excel por WhatsApp usando pyautogui."""
+    try:
+        # Abrir WhatsApp Web
+        webbrowser.open("https://web.whatsapp.com/")
+        logging.info("Abriendo WhatsApp Web...")
+        time.sleep(15)  # Esperar a que se cargue completamente
+
+        # Buscar el contacto o número de teléfono
+        pyautogui.click(412,235)  # Ajusta la coordenada para el cuadro de búsqueda de WhatsApp
+        time.sleep(2)
+        escribir_texto("932289272")  # Escribir el número de contacto
+        time.sleep(2)
+        pyautogui.press('enter')  # Abrir el chat del contacto
+        time.sleep(2)
+
+        # Adjuntar archivo
+        x, y = COORDENADAS["whatsapp_adjuntar"]
+        mover_mouse_y_clic(x, y)  # Clic en el icono de adjuntar (clip)
+        time.sleep(2)
+
+        x, y = COORDENADAS["whatsapp_adjuntar_archivo"]
+        mover_mouse_y_clic(x, y)  # Clic en "adjuntar archivo"
+        time.sleep(2)
+
+        # Escribir la ruta del archivo de Excel y enviarlo
+        escribir_texto(ruta_reporte)
+        time.sleep(2)
+        pyautogui.press('enter')  # Seleccionar el archivo
+        time.sleep(2)
+
+        # Clic en "Enviar"
+        x, y = COORDENADAS["whatsapp_enviar"]
+        mover_mouse_y_clic(x, y)  # Botón de "Enviar"
+        logging.info("Archivo enviado por WhatsApp exitosamente.")
+    except Exception as e:
+        logging.error(f"Error al enviar el archivo por WhatsApp: {e}")
+
 def generar_reporte_y_salir():
     """Función para salir y luego generar el reporte."""
     x, y = COORDENADAS["boton_salir"]
@@ -105,6 +148,9 @@ def generar_reporte_y_salir():
     x, y = COORDENADAS["boton_generar_reporte"]
     mover_mouse_y_clic(x, y)  # Botón de "Generar Reporte"
     time.sleep(5)
+
+    # Después de generar el reporte, esperar y enviar el archivo por WhatsApp
+    enviar_reporte_por_whatsapp()
 
 def automatizar_proceso():
     """Automatiza todo el proceso de carga de archivos y generación de reportes."""
