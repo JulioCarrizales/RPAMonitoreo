@@ -278,3 +278,115 @@
 2024-10-23 11:47:39,260 - INFO - Moviendo el mouse a las coordenadas (1078, 575) y haciendo clic.
 2024-10-23 11:48:06,993 - INFO - Moviendo el mouse a las coordenadas (1858, 951) y haciendo clic.
 2024-10-23 11:48:07,767 - INFO - Archivo enviado por WhatsApp exitosamente.
+2024-10-23 11:58:21,760 - INFO - Iniciando proceso de carga de datos...
+2024-10-23 11:58:23,028 - INFO - Archivo C:\Users\Administrador\Desktop\Reporte - copia\Aplicativo\ggrpt_monitoreo_atms.xlsm abierto correctamente.
+2024-10-23 11:58:23,028 - INFO - Esperando 10 segundos para que Excel se cargue completamente...
+2024-10-23 11:58:33,030 - INFO - Moviendo el mouse a las coordenadas (730, 632) y haciendo clic.
+2024-10-23 11:58:35,810 - INFO - Seleccionando hoja scaj_registro y cargando archivo rpt_SuperDetallado.xlsx
+2024-10-23 11:58:35,810 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 11:58:41,393 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 11:59:01,507 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 11:59:04,275 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 11:59:07,276 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 11:59:08,043 - INFO - Mensaje de éxito aceptado.
+2024-10-23 11:59:08,043 - INFO - Seleccionando hoja eeyrr_ticketsPendiente y cargando archivo rep_TicketsPendientes.xlsx
+2024-10-23 11:59:08,043 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 11:59:15,440 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 11:59:36,147 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 11:59:38,926 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 11:59:41,926 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 11:59:42,692 - INFO - Mensaje de éxito aceptado.
+2024-10-23 11:59:42,692 - INFO - Seleccionando hoja truesight_noRetiro y cargando archivo truesight_noretiro.csv
+2024-10-23 11:59:42,692 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 11:59:49,283 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 12:00:09,189 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 12:00:11,958 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 12:00:14,959 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 12:00:15,725 - INFO - Mensaje de éxito aceptado.
+2024-10-23 12:00:15,725 - INFO - Seleccionando hoja snl_saldos y cargando archivo snl_saldos.xls
+2024-10-23 12:00:15,725 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 12:00:20,706 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 12:00:38,998 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 12:00:41,774 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 12:00:44,774 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 12:00:45,541 - INFO - Mensaje de éxito aceptado.
+2024-10-23 12:00:45,541 - INFO - Seleccionando hoja truesight_alertasCritical y cargando archivo truesight_critical.csv
+2024-10-23 12:00:45,541 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 12:00:53,543 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 12:01:13,443 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 12:01:16,207 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 12:01:19,208 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 12:01:19,972 - INFO - Mensaje de éxito aceptado.
+2024-10-23 12:01:19,972 - INFO - Seleccionando hoja jatmmon_indicadores y cargando archivo jatmmon_indicadores.xls
+2024-10-23 12:01:19,972 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 12:01:26,763 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 12:01:46,872 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 12:01:49,639 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 12:01:52,639 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 12:01:53,407 - INFO - Mensaje de éxito aceptado.
+2024-10-23 12:01:53,407 - INFO - Cargando última hoja 'jatmmon_indicadores'. Saliendo y generando reporte.
+2024-10-23 12:01:53,407 - INFO - Moviendo el mouse a las coordenadas (832, 618) y haciendo clic.
+2024-10-23 12:01:56,173 - INFO - Moviendo el mouse a las coordenadas (1057, 624) y haciendo clic.
+2024-10-23 12:02:02,047 - INFO - Abriendo WhatsApp Web...
+2024-10-23 12:02:25,178 - INFO - Moviendo el mouse a las coordenadas (989, 952) y haciendo clic.
+2024-10-23 12:02:28,310 - INFO - Moviendo el mouse a las coordenadas (1078, 575) y haciendo clic.
+2024-10-23 12:02:53,679 - INFO - Moviendo el mouse a las coordenadas (1858, 951) y haciendo clic.
+2024-10-23 12:02:54,436 - INFO - Archivo enviado por WhatsApp exitosamente.
+2024-10-23 13:58:39,229 - INFO - Iniciando proceso de carga de datos...
+2024-10-23 13:58:40,526 - INFO - Archivo C:\Users\Administrador\Desktop\Reporte - copia\Aplicativo\ggrpt_monitoreo_atms.xlsm abierto correctamente.
+2024-10-23 13:58:40,526 - INFO - Esperando 10 segundos para que Excel se cargue completamente...
+2024-10-23 13:58:50,532 - INFO - Moviendo el mouse a las coordenadas (730, 632) y haciendo clic.
+2024-10-23 13:58:53,302 - INFO - Seleccionando hoja scaj_registro y cargando archivo rpt_SuperDetallado.xlsx
+2024-10-23 13:58:53,302 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 13:59:08,696 - INFO - Iniciando proceso de carga de datos...
+2024-10-23 13:59:09,897 - INFO - Archivo C:\Users\Administrador\Desktop\Reporte - copia\Aplicativo\ggrpt_monitoreo_atms.xlsm abierto correctamente.
+2024-10-23 13:59:09,897 - INFO - Esperando 10 segundos para que Excel se cargue completamente...
+2024-10-23 13:59:19,901 - INFO - Moviendo el mouse a las coordenadas (730, 632) y haciendo clic.
+2024-10-23 13:59:22,665 - INFO - Seleccionando hoja scaj_registro y cargando archivo rpt_SuperDetallado.xlsx
+2024-10-23 13:59:22,665 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 13:59:28,253 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 13:59:48,369 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 13:59:51,144 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 13:59:54,144 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 13:59:54,910 - INFO - Mensaje de éxito aceptado.
+2024-10-23 13:59:54,910 - INFO - Seleccionando hoja eeyrr_ticketsPendiente y cargando archivo rep_TicketsPendientes.xlsx
+2024-10-23 13:59:54,910 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 14:00:02,317 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 14:00:23,030 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 14:00:25,807 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 14:00:28,807 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 14:00:29,572 - INFO - Mensaje de éxito aceptado.
+2024-10-23 14:00:29,572 - INFO - Seleccionando hoja truesight_noRetiro y cargando archivo truesight_noretiro.csv
+2024-10-23 14:00:29,572 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 14:00:36,170 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 14:00:56,077 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 14:00:58,852 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 14:01:01,853 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 14:01:02,617 - INFO - Mensaje de éxito aceptado.
+2024-10-23 14:01:02,617 - INFO - Seleccionando hoja snl_saldos y cargando archivo snl_saldos.xls
+2024-10-23 14:01:02,617 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 14:01:07,606 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 14:01:25,910 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 14:01:28,681 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 14:01:31,682 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 14:01:32,447 - INFO - Mensaje de éxito aceptado.
+2024-10-23 14:01:32,447 - INFO - Seleccionando hoja truesight_alertasCritical y cargando archivo truesight_critical.csv
+2024-10-23 14:01:32,447 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 14:01:40,454 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 14:02:00,354 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 14:02:03,128 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 14:02:06,128 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 14:02:06,892 - INFO - Mensaje de éxito aceptado.
+2024-10-23 14:02:06,892 - INFO - Seleccionando hoja jatmmon_indicadores y cargando archivo jatmmon_indicadores.xls
+2024-10-23 14:02:06,892 - INFO - Moviendo el mouse a las coordenadas (1319, 415) y haciendo clic.
+2024-10-23 14:02:13,686 - INFO - Moviendo el mouse a las coordenadas (1293, 494) y haciendo clic.
+2024-10-23 14:02:33,782 - INFO - Moviendo el mouse a las coordenadas (1106, 621) y haciendo clic.
+2024-10-23 14:02:36,555 - INFO - Esperando a que aparezca el mensaje de éxito...
+2024-10-23 14:02:39,555 - INFO - Moviendo el mouse a las coordenadas (1020, 619) y haciendo clic.
+2024-10-23 14:02:40,321 - INFO - Mensaje de éxito aceptado.
+2024-10-23 14:02:40,321 - INFO - Cargando última hoja 'jatmmon_indicadores'. Saliendo y generando reporte.
+2024-10-23 14:02:40,321 - INFO - Moviendo el mouse a las coordenadas (832, 618) y haciendo clic.
+2024-10-23 14:02:43,087 - INFO - Moviendo el mouse a las coordenadas (1057, 624) y haciendo clic.
+2024-10-23 14:02:48,976 - INFO - Abriendo WhatsApp Web...
+2024-10-23 14:03:12,309 - INFO - Moviendo el mouse a las coordenadas (989, 952) y haciendo clic.
+2024-10-23 14:03:15,562 - INFO - Moviendo el mouse a las coordenadas (1078, 575) y haciendo clic.

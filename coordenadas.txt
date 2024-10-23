@@ -5,3 +5,9 @@ Botón de cargar: 1106,621
 Botón de salir: 832,618
 Botón de generar reporte: 1057, 624
 Botón de aceptar: 1020, 619
+
+
+Credencial: 
+
+Id: cquevedo
+Contraseña: canales123
