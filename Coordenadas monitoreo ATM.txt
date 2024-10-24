@@ -1,3 +1,20 @@
+===========================================
+	NOTIFICACIONES EN LÍNEA
+===========================================
+Campo usuario:236,447
+Campo password: 217,518
+Botón login: 113,600
+Tablero Cajero: 714,95
+Boton excel: 136,154
+Guardar ruta:883,228
+Nombre de archivo: 858,636
+Reemplazar archivo: 1055, 535
+Botón guardar: 1124,814
+
+
+===========================================
+		REPORTE
+===========================================
 Botón de cargar datos: 730,632
 Botón para adjuntar archivos: 1293, 494
 Menú desplegable del nombre de la hoja: 1319, 415
@@ -5,7 +22,13 @@ Botón de cargar: 1106,621
 Botón de salir: 832,618
 Botón de generar reporte: 1057, 624
 Botón de aceptar: 1020, 619
+
+
+===========================================
+		WHATSAPP
+===========================================
 Cuadro de búsqueda de Whatsapp: 412, 235
 Símbolo de adjuntar archivos: 989, 952
 Símbolo de documento: 1078, 575
 Botón de enviar: 1858, 951
+
