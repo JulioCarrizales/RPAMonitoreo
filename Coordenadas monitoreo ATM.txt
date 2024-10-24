@@ -1,4 +1,17 @@
 ===========================================
+		JATMMON
+===========================================
+Usuario: 972, 518
+Contraseña: 955, 555
+Botón de jatmmon: 1259, 360
+Export to Excel: 1127, 315
+Nombre del archivo: 836, 630
+Close: 1895, 13
+Confirmación: 893, 552
+Close: 1895, 13
+Confirmación: 902, 546
+
+===========================================
 	NOTIFICACIONES EN LÍNEA
 ===========================================
 Campo usuario:236,447
