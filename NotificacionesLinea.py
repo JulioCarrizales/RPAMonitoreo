@@ -33,7 +33,7 @@ def escribir_texto(texto, delay=0.001):
     pyautogui.write(texto, interval=delay)
 
 # Proceso de automatización
-def automatizar():
+def automatizar_notificaciones():
     abrir_aplicacion()
     
     time.sleep(5)  # Esperar a que la aplicación cargue
@@ -79,4 +79,4 @@ def automatizar():
     mover_mouse_y_clic(*COORDENADAS["cerrar"])
 
 # Ejecutar la automatización
-automatizar()
+automatizar_notificaciones()
