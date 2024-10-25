@@ -1,4 +1,23 @@
 ===========================================
+	     ERRORES & REMESAS
+===========================================
+
+Usuario: 1057, 528
+Contraseña: 1035, 579
+Reporte estadístico: 1867, 659
+Fecha: 418, 162
+Mes: 767, 204
+Estado: 357, 361
+Calcular: 1541, 182
+Excel: 1541, 352
+Salir: 1524, 524
+Cerrar 1893, 21
+Cerrar_2: 1247, 324
+Extra: 1355,1052 (Edge, Explorador de archivos, VSC, ERRORES y EXCEL)
+Cerrar_3: 1691,228
+
+
+===========================================
 		JATMMON
 ===========================================
 Usuario: 972, 518
