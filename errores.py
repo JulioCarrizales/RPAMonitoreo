@@ -23,7 +23,7 @@ COORDENADAS= {
      "Estado": (357,361),
      "Calcular":(1541,182),
      "Excel": (1541,352),
-     "Salir": (1524,524),
+     "Salir": (1580,79),
      "Cerrar_1":(1893,21),
      "Cerrar_2":(1247,324),
      "Cerrar_3" : (1691,228),
@@ -35,7 +35,7 @@ def mover_mouse_y_clic(x, y, delay=0.2):
     pyautogui.moveTo(x, y, duration=delay)
     pyautogui.click()
 
-def escribir_texto(texto, delay=0.001):
+def escribir_texto(texto, delay=0.05):
     """Función para escribir texto con un retraso entre cada carácter."""
     pyautogui.write(texto, interval=delay)
 
@@ -88,17 +88,21 @@ def automatizar_errores():
     pyautogui.press("enter")
 
     mover_mouse_y_clic(*COORDENADAS["Cerrar_3"])
+    time.sleep(3)
     pyautogui.press("enter")
+    time.sleep(3)
 
     escribir_texto("rep_TicketsPendientes.xlsx")
-    pyautogui.press("enter")
 
+    pyautogui.press("enter")
+    pyautogui.press("tab")
+    pyautogui.press("enter")
     mover_mouse_y_clic(*COORDENADAS["Salir"])
     mover_mouse_y_clic(*COORDENADAS["Cerrar_1"])
     mover_mouse_y_clic(*COORDENADAS["Cerrar_2"])
 
 
-def mover_archivo(nombre_archivo, ruta_origen, ruta_destino):
+def mover_archivo_errores(nombre_archivo, ruta_origen, ruta_destino):
     """Función que busca un archivo por su nombre en la ruta de origen y lo mueve a la ruta de destino."""
     archivo_origen = os.path.join(ruta_origen, nombre_archivo)
     archivo_destino = os.path.join(ruta_destino, nombre_archivo)
@@ -119,4 +123,4 @@ ruta_origen = r"C:\Users\Administrador\Documents"
 ruta_destino = r"C:\Users\Administrador\Desktop\Reporte - copia\DATA"
 
 automatizar_errores()
-mover_archivo(nombre_archivo,ruta_origen,ruta_destino)
+mover_archivo_errores(nombre_archivo,ruta_origen,ruta_destino)

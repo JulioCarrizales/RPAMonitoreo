@@ -63,7 +63,7 @@ def automatizar_jatmmon ():
     mover_mouse_y_clic(*COORDENADAS["Close"])
     mover_mouse_y_clic(*COORDENADAS["Confirmacion_2"])
 
-def mover_archivo(nombre_archivo, ruta_origen, ruta_destino):
+def mover_archivo_jatmmon(nombre_archivo, ruta_origen, ruta_destino):
     """Función que busca un archivo por su nombre en la ruta de origen y lo mueve a la ruta de destino."""
     archivo_origen = os.path.join(ruta_origen, nombre_archivo)
     archivo_destino = os.path.join(ruta_destino, nombre_archivo)
@@ -86,5 +86,5 @@ ruta_destino = r"C:\Users\Administrador\Desktop\Reporte - copia\DATA"
 
 
 automatizar_jatmmon()
-mover_archivo(nombre_archivo, ruta_origen, ruta_destino)
+mover_archivo_jatmmon(nombre_archivo, ruta_origen, ruta_destino)
     
