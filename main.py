@@ -5,6 +5,13 @@ import logging
 import win32com.client as win32
 import pythoncom
 import webbrowser
+from coordenadas import *
+from errores import *
+from NotificacionesLinea import *
+from wifiRPA import *
+from Jatmmon import *
+from truesight import *
+from wifiRPA import *
 
 # Configuración del log para guardar mensajes en un archivo
 logging.basicConfig(filename='carga_datos.log', level=logging.INFO, 
@@ -189,4 +196,17 @@ def automatizar_proceso():
     generar_reporte_y_salir()
 
 # Ejecutar el proceso de automatización
+
+conectar_bncorp()
+
+automatizar_errores()
+mover_archivo_errores()
+
+automatizar_jatmmon()
+mover_archivo_jatmmon()
+
+automatizar_notificaciones()
+
+conectar_sbdir()
+
 automatizar_proceso()

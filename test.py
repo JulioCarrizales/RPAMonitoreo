@@ -14,12 +14,12 @@ COORDENADAS = {
     "primer_filtro": (357, 220),
     "segundo_filtro": (395, 354),
     "tercer_filtro": (195, 372),
-    "total_events": (1679,682),  # Coordenadas del número total de eventos
+    "total_events": (1679, 682),  # Coordenadas del número total de eventos
     "expandir_tabla": (1729, 208),
     "export_boton": (965, 687),
     "export_csv": (549, 402),
     "export_complete": (608, 501),
-    "primera_fila_tabla": (83,439), 
+    "primera_fila_tabla": (83, 443),  # Coordenadas de la primera fila
 }
 
 # Credenciales de inicio de sesión
@@ -75,47 +75,45 @@ def obtener_total_eventos():
         total_events = 0
     return total_events
 
-def seleccionar_filas_individualmente(total_events):
-    """Selecciona todas las filas una por una sin mantener presionada la tecla Shift durante el scroll."""
+def seleccionar_todas_las_filas():
+    """Selecciona todas las filas desde la primera hasta la última sin mantener Shift durante el scroll."""
     # Expande la vista de la tabla
     mover_mouse_y_clic(*COORDENADAS["expandir_tabla"])
     time.sleep(2)
 
-    # Coordenadas iniciales
-    x_inicial, y_inicial = COORDENADAS["primera_fila_tabla"]
+    x = COORDENADAS["primera_fila_tabla"][0]
+    y_inicio = COORDENADAS["primera_fila_tabla"][1]
 
-    # Altura entre filas (ajusta este valor según tu pantalla)
-    altura_fila = 25  # Por ejemplo, 25 píxeles entre filas
+    # Paso 1: Hacer clic en la primera fila sin mantener Shift
+    pyautogui.moveTo(x, y_inicio)
+    pyautogui.click()
+    time.sleep(0.5)
 
-    # Coordenadas máximas en Y para evitar la barra de tareas
-    y_max = pyautogui.size().height - 50  # 50 píxeles por encima del borde inferior de la pantalla
+    # Paso 2: Realizar scroll hasta el final de la tabla sin mantener Shift
+    # Mover el cursor dentro del área de la tabla antes de scrollear
+    pyautogui.moveTo(x, y_inicio + 100)
+    time.sleep(0.2)
 
-    filas_seleccionadas = 0
-    y_actual = y_inicial
+    # Realizar scroll hacia abajo hasta el final
+    scroll_times = 10  # Ajusta este número según sea necesario
+    for _ in range(scroll_times):
+        pyautogui.scroll(-500)  # Scroll hacia abajo
+        time.sleep(0.5)
 
-    while filas_seleccionadas < total_events:
-        # Mueve el cursor a la posición actual y hace clic mientras mantiene presionada la tecla Ctrl
-        pyautogui.moveTo(x_inicial, y_actual)
-        pyautogui.keyDown('ctrl')
-        pyautogui.click()
-        pyautogui.keyUp('ctrl')
-        filas_seleccionadas += 1
-        time.sleep(0.1)
+    # Paso 3: Mover el cursor a la última fila visible
+    # Usamos una posición relativa en la pantalla
+    screen_width, screen_height = pyautogui.size()
+    x_fin = x  # Mantenemos la misma coordenada X
+    y_fin = screen_height - 150  # Un poco por encima del borde inferior
 
-        # Calcula la posición de la siguiente fila
-        y_siguiente = y_actual + altura_fila
+    pyautogui.moveTo(x_fin, y_fin)
+    time.sleep(0.5)
 
-        # Si y_siguiente supera y_max, realizamos scroll y ajustamos y_actual
-        if y_siguiente > y_max:
-            # Mueve el cursor hacia arriba para evitar la barra de tareas
-            pyautogui.moveTo(x_inicial, y_actual - 100)
-            # Realiza scroll hacia abajo
-            pyautogui.scroll(-100)  # Ajusta este valor según sea necesario
-            time.sleep(0.5)
-            # Ajusta y_actual después del scroll
-            y_actual = y_actual - 100 + altura_fila  # Ajusta según el scroll realizado
-        else:
-            y_actual = y_siguiente
+    # Paso 4: Mantener Shift y hacer clic en la última fila
+    pyautogui.keyDown('shift')
+    pyautogui.click()
+    pyautogui.keyUp('shift')
+    time.sleep(0.5)
 
     # Contrae la vista de la tabla
     mover_mouse_y_clic(*COORDENADAS["expandir_tabla"])
@@ -131,7 +129,7 @@ def descargar_archivo():
     time.sleep(3)
 
     # Espera hasta que el archivo esté disponible y no esté en uso
-    max_wait_time = 60  # tiempo máximo de espera en segundos
+    max_wait_time = 60  # Tiempo máximo de espera en segundos
     start_time = time.time()
     while True:
         if os.path.exists(ruta_descarga):
@@ -165,7 +163,7 @@ def proceso_completo():
     total_events = obtener_total_eventos()
     print(f"Total Events: {total_events}")
     if total_events > 0:
-        seleccionar_filas_individualmente(total_events)
+        seleccionar_todas_las_filas()
         descargar_archivo()
     else:
         print("No hay eventos para descargar.")
