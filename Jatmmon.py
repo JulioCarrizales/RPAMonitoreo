@@ -63,28 +63,28 @@ def automatizar_jatmmon ():
     mover_mouse_y_clic(*COORDENADAS["Close"])
     mover_mouse_y_clic(*COORDENADAS["Confirmacion_2"])
 
-def mover_archivo_jatmmon(nombre_archivo, ruta_origen, ruta_destino):
+def mover_archivo_jatmmon(nombre_archivo_jatmmon, ruta_origen_jatmmon, ruta_destino_jatmmon):
     """Función que busca un archivo por su nombre en la ruta de origen y lo mueve a la ruta de destino."""
-    archivo_origen = os.path.join(ruta_origen, nombre_archivo)
-    archivo_destino = os.path.join(ruta_destino, nombre_archivo)
+    archivo_origen = os.path.join(ruta_origen_jatmmon, nombre_archivo_jatmmon)
+    archivo_destino = os.path.join(ruta_destino_jatmmon, nombre_archivo_jatmmon)
 
     # Verificar si el archivo existe en la ruta de origen
     if os.path.exists(archivo_origen):
         try:
             # Mover el archivo a la ruta de destino
             shutil.move(archivo_origen, archivo_destino)
-            print(f"El archivo '{nombre_archivo}' ha sido movido exitosamente a '{ruta_destino}'.")
+            print(f"El archivo '{nombre_archivo_jatmmon}' ha sido movido exitosamente a '{ruta_destino_jatmmon}'.")
         except Exception as e:
             print(f"Ocurrió un error al mover el archivo: {e}")
     else:
-        print(f"El archivo '{nombre_archivo}' no fue encontrado en '{ruta_origen}'.")
+        print(f"El archivo '{nombre_archivo_jatmmon}' no fue encontrado en '{ruta_origen_jatmmon}'.")
 
 
-nombre_archivo = "jatmmon_indicadores.xls"
-ruta_origen = r"C:\Users\Administrador\Desktop"
-ruta_destino = r"C:\Users\Administrador\Desktop\Reporte - copia\DATA"
+nombre_archivo_jatmmon = "jatmmon_indicadores.xls"
+ruta_origen_jatmmon = r"C:\Users\Administrador\Desktop"
+ruta_destino_jatmmon = r"C:\Users\Administrador\Desktop\Reporte - copia\DATA"
 
 
 automatizar_jatmmon()
-mover_archivo_jatmmon(nombre_archivo, ruta_origen, ruta_destino)
+mover_archivo_jatmmon(nombre_archivo_jatmmon, ruta_origen_jatmmon, ruta_destino_jatmmon)
     

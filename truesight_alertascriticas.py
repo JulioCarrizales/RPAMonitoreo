@@ -148,7 +148,7 @@ def descargar_archivo():
         print(f"Error al mover el archivo: {e}")
 
 
-def proceso_completo():
+def proceso_completo_criticos():
     """Ejecuta todo el proceso de inicio de sesión, aplicación de filtros y descargas por lotes."""
     abrir_pagina()
     time.sleep(5)
@@ -179,5 +179,5 @@ def proceso_completo():
         print("No hay eventos para descargar.")
 
 # Ejecutar el proceso completo
-proceso_completo()
+proceso_completo_criticos()
 mover_mouse_y_clic(*COORDENADAS["cerrar"])

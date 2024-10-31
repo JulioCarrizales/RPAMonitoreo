@@ -5,6 +5,7 @@ import win32com.client as win32
 import pythoncom
 from datetime import datetime
 import shutil
+from wifiRPA import *
 
 # Ruta del acceso directo que abre la aplicación
 ruta_acceso_directo = r'C:\Users\Administrador\Desktop\Reporte - copia\ErroresRemesas_MonitoreoCajeros.exe - Acceso directo.lnk'
@@ -53,6 +54,9 @@ def seleccionar_mes_anterior():
 
 
 def automatizar_errores():
+    conectar_bncorp()
+    time.sleep(10)
+
     abrir_aplicacion()
 
     time.sleep(5)
@@ -102,25 +106,25 @@ def automatizar_errores():
     mover_mouse_y_clic(*COORDENADAS["Cerrar_2"])
 
 
-def mover_archivo_errores(nombre_archivo, ruta_origen, ruta_destino):
+def mover_archivo_errores(nombre_archivo_errores, ruta_origen_errores, ruta_destino_errores):
     """Función que busca un archivo por su nombre en la ruta de origen y lo mueve a la ruta de destino."""
-    archivo_origen = os.path.join(ruta_origen, nombre_archivo)
-    archivo_destino = os.path.join(ruta_destino, nombre_archivo)
+    archivo_origen = os.path.join(ruta_origen_errores, nombre_archivo_errores)
+    archivo_destino = os.path.join(ruta_destino_errores, nombre_archivo_errores)
 
     # Verificar si el archivo existe en la ruta de origen
     if os.path.exists(archivo_origen):
         try:
             # Mover el archivo a la ruta de destino
             shutil.move(archivo_origen, archivo_destino)
-            print(f"El archivo '{nombre_archivo}' ha sido movido exitosamente a '{ruta_destino}'.")
+            print(f"El archivo '{nombre_archivo_errores}' ha sido movido exitosamente a '{ruta_destino_errores}'.")
         except Exception as e:
             print(f"Ocurrió un error al mover el archivo: {e}")
     else:
-        print(f"El archivo '{nombre_archivo}' no fue encontrado en '{ruta_origen}'.")
+        print(f"El archivo '{nombre_archivo_errores}' no fue encontrado en '{ruta_origen_errores}'.")
 
-nombre_archivo = "rep_TicketsPendientes.xlsx"
-ruta_origen = r"C:\Users\Administrador\Documents"
-ruta_destino = r"C:\Users\Administrador\Desktop\Reporte - copia\DATA"
+nombre_archivo_errores = "rep_TicketsPendientes.xlsx"
+ruta_origen_errores = r"C:\Users\Administrador\Documents"
+ruta_destino_errores = r"C:\Users\Administrador\Desktop\Reporte - copia\DATA"
 
 automatizar_errores()
-mover_archivo_errores(nombre_archivo,ruta_origen,ruta_destino)
+mover_archivo_errores(nombre_archivo_errores,ruta_origen_errores,ruta_destino_errores)

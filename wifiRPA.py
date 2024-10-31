@@ -38,5 +38,3 @@ def conectar_sbdir():
             print(resultado.stdout)
     except Exception as e:
         print(f"Ocurrió un error: {e}")
-
-conectar_bncorp()

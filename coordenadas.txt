@@ -6,7 +6,7 @@ Botón de salir: 832,618
 Botón de generar reporte: 1057, 624
 Botón de aceptar: 1020, 619
 
-
+    webbrowser.open("https://tsps-vip.bn.com.pe:8043")
 Credencial: 
 
 TrueSight
@@ -16,3 +16,19 @@ Contraseña: Teraware
 Notifiaciones
 Id: ATM01
 Contraseña: Teraware
+
+
+    "usuario": (958, 486),
+    "contrasena": (933, 533),
+    "primer_filtro": (308, 229),
+    "segundo_filtro": (124, 284),
+    "tercer_filtro": (351, 296),
+    "cuarto_filtro": (95,586),
+    "quinto_filtro": (1461,639),
+    "total_events": (1671, 522),  # Coordenadas del número total de eventos
+    "expandir_tabla": (1729, 206),
+    "export_boton": (962,312),
+    "export_csv": (551, 399),
+    "export_complete": (615, 501),
+    "primera_fila_tabla": (83, 443),  # Coordenadas de la primera fila
+    "cerrar": (1890,18)

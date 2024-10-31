@@ -5,13 +5,8 @@ import logging
 import win32com.client as win32
 import pythoncom
 import webbrowser
-from coordenadas import *
-from errores import *
-from NotificacionesLinea import *
-from wifiRPA import *
-from Jatmmon import *
-from truesight import *
-from wifiRPA import *
+import subprocess
+
 
 # Configuración del log para guardar mensajes en un archivo
 logging.basicConfig(filename='carga_datos.log', level=logging.INFO, 
@@ -43,6 +38,7 @@ COORDENADAS = {
     "boton_cargar": (1106, 621),
     "boton_salir": (832, 618),
     "boton_generar_reporte": (1057, 624),
+    "boton_aceptar_exito": (1020, 619), # Coordenada ajustada del botón "Aceptar"
     "boton_aceptar_exito": (1020, 619),  # Coordenada ajustada del botón "Aceptar"
     "whatsapp_adjuntar": (989, 952),  # Coordenada del icono "adjuntar" en WhatsApp Web
     "whatsapp_adjuntar_archivo": (1078, 575),  # Coordenada del icono "adjuntar archivo"
@@ -62,13 +58,13 @@ def abrir_excel():
         logging.error(f"Error al abrir el archivo de Excel: {e}")
         return None, None
 
-def mover_mouse_y_clic(x, y, delay=0.5):
+def mover_mouse_y_clic(x, y, delay=0.2):
     """Función para mover el mouse a una posición y hacer clic."""
     logging.info(f"Moviendo el mouse a las coordenadas ({x}, {y}) y haciendo clic.")
     pyautogui.moveTo(x, y, duration=delay)
     pyautogui.click()
 
-def escribir_texto(texto, delay=0.2):
+def escribir_texto(texto, delay=0.001):
     """Función para escribir texto con un retraso entre cada carácter."""
     pyautogui.write(texto, interval=delay)
 
@@ -104,18 +100,36 @@ def cargar_y_aceptar():
     x, y = COORDENADAS["boton_cargar"]
     mover_mouse_y_clic(x, y)  # Botón de "Cargar"
     time.sleep(2)
-    
+
     # Esperar el mensaje de éxito y aceptarlo
     esperar_y_aceptar_exito()
 
+def conectar_sbdir():
+    try:
+        print("Intentando conectar a la red SBDIR...")
+        # Comando para conectarse a la red WiFi SBDIR
+        comando = ['netsh', 'wlan', 'connect', 'name=SBDIR']
+        print(f"Ejecutando comando: {' '.join(comando)}")
+        resultado = subprocess.run(comando, capture_output=True, text=True)
+        print(f"Resultado del comando: {resultado.stdout}")
+
+        # Verificar si la conexión fue exitosa
+        if "completed successfully" in resultado.stdout.lower():
+            print("Conectado a la red SBDIR exitosamente.")
+        else:
+            print("No se pudo conectar a la red SBDIR. Verifica que la red esté guardada y al alcance.")
+            print(resultado.stdout)
+    except Exception as e:
+        print(f"Ocurrió un error: {e}")
+
 def enviar_reporte_por_whatsapp():
+    conectar_sbdir()
     """Función para enviar el archivo de Excel por WhatsApp usando pyautogui."""
     try:
         # Abrir WhatsApp Web
         webbrowser.open("https://web.whatsapp.com/")
         logging.info("Abriendo WhatsApp Web...")
-        time.sleep(15)  # Esperar a que se cargue completamente
-
+        time.sleep(60)  # Esperar a que se cargue completamente
         # Buscar el contacto o número de teléfono
         pyautogui.click(412,235)  # Ajusta la coordenada para el cuadro de búsqueda de WhatsApp
         time.sleep(2)
@@ -123,22 +137,18 @@ def enviar_reporte_por_whatsapp():
         time.sleep(2)
         pyautogui.press('enter')  # Abrir el chat del contacto
         time.sleep(2)
-
         # Adjuntar archivo
         x, y = COORDENADAS["whatsapp_adjuntar"]
         mover_mouse_y_clic(x, y)  # Clic en el icono de adjuntar (clip)
         time.sleep(2)
-
         x, y = COORDENADAS["whatsapp_adjuntar_archivo"]
         mover_mouse_y_clic(x, y)  # Clic en "adjuntar archivo"
         time.sleep(2)
-
         # Escribir la ruta del archivo de Excel y enviarlo
         escribir_texto(ruta_reporte)
         time.sleep(2)
         pyautogui.press('enter')  # Seleccionar el archivo
         time.sleep(2)
-
         # Clic en "Enviar"
         x, y = COORDENADAS["whatsapp_enviar"]
         mover_mouse_y_clic(x, y)  # Botón de "Enviar"
@@ -159,16 +169,62 @@ def generar_reporte_y_salir():
     # Después de generar el reporte, esperar y enviar el archivo por WhatsApp
     enviar_reporte_por_whatsapp()
 
+def conectar_bncorp():
+    try:
+        print("Intentando conectar a la red BNCORP...")
+        # Comando para conectarse a la red WiFi BNCORP
+        comando = ['netsh', 'wlan', 'connect', 'name=BNCORP']
+        print(f"Ejecutando comando: {' '.join(comando)}")
+        resultado = subprocess.run(comando, capture_output=True, text=True)
+        print(f"Resultado del comando: {resultado.stdout}")
+
+        # Verificar si la conexión fue exitosa
+        if "completed successfully" in resultado.stdout.lower():
+            print("Conectado a la red BNCORP exitosamente.")
+        else:
+            print("No se pudo conectar a la red BNCORP. Verifica que la red esté guardada y al alcance.")
+            print(resultado.stdout)
+    except Exception as e:
+        print(f"Ocurrió un error: {e}")
+
+def toggle_wifi(interface_name="Wi-Fi", delay=5):
+    """
+    Apaga y enciende el adaptador Wi-Fi especificado.
+
+    Args:
+        interface_name (str): Nombre del adaptador de red Wi-Fi. Por defecto es "Wi-Fi".
+        delay (int): Tiempo en segundos para esperar entre apagar y encender. Por defecto es 5 segundos.
+    """
+    try:
+        # Apagar el adaptador de Wi-Fi
+        print(f"Apagando el adaptador de red: {interface_name}...")
+        subprocess.check_call(['netsh', 'interface', 'set', 'interface', interface_name, 'admin=disable'], shell=True)
+        print(f"Adaptador {interface_name} apagado. Esperando {delay} segundos...")
+        time.sleep(delay)
+
+        # Encender el adaptador de Wi-Fi
+        print(f"Encendiendo el adaptador de red: {interface_name}...")
+        subprocess.check_call(['netsh', 'interface', 'set', 'interface', interface_name, 'admin=enable'], shell=True)
+        print(f"Adaptador {interface_name} encendido exitosamente.")
+
+    except subprocess.CalledProcessError as e:
+        print(f"Error al cambiar el estado del adaptador {interface_name}: {e}")
+    except Exception as e:
+        print(f"Ocurrió un error inesperado: {e}")
+
+
 def automatizar_proceso():
+    toggle_wifi()
+    time.sleep(15)
     """Automatiza todo el proceso de carga de archivos y generación de reportes."""
     logging.info("Iniciando proceso de carga de datos...")
-    
+
     # Abrir Excel automáticamente
     excel, workbook = abrir_excel()
     if excel is None or workbook is None:
         logging.error("No se pudo abrir el archivo de Excel. Proceso abortado.")
         return
-    
+
     # Esperar 10 segundos antes de comenzar la interacción con Excel
     logging.info("Esperando 10 segundos para que Excel se cargue completamente...")
     time.sleep(10)
@@ -181,32 +237,20 @@ def automatizar_proceso():
     # Repetir el proceso para cada hoja y archivo
     for hoja, archivo in archivos_necesarios.items():
         logging.info(f"Seleccionando hoja {hoja} y cargando archivo {archivo}")
-        
+
         # Seleccionar la hoja desde el menú desplegable
         seleccionar_hoja(hoja)
-        
+
         # Adjuntar el archivo correspondiente
         seleccionar_archivo_y_adjuntar(archivo)
-        
+
         # Cargar y aceptar el mensaje de éxito
         cargar_y_aceptar()
-    
+
     # Después de cargar "jatmmon_indicadores", salir y generar el reporte
     logging.info("Cargando última hoja 'jatmmon_indicadores'. Saliendo y generando reporte.")
     generar_reporte_y_salir()
+    conectar_bncorp()
 
 # Ejecutar el proceso de automatización
-
-conectar_bncorp()
-
-automatizar_errores()
-mover_archivo_errores()
-
-automatizar_jatmmon()
-mover_archivo_jatmmon()
-
-automatizar_notificaciones()
-
-conectar_sbdir()
-
 automatizar_proceso()
