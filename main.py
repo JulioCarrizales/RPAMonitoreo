@@ -42,7 +42,8 @@ COORDENADAS = {
     "boton_aceptar_exito": (1020, 619),  # Coordenada ajustada del botón "Aceptar"
     "whatsapp_adjuntar": (989, 952),  # Coordenada del icono "adjuntar" en WhatsApp Web
     "whatsapp_adjuntar_archivo": (1078, 575),  # Coordenada del icono "adjuntar archivo"
-    "whatsapp_enviar": (1858, 951)  # Coordenada del botón "Enviar"
+    "whatsapp_enviar": (1858, 951),  # Coordenada del botón "Enviar"
+    "cerrar": (1890,18)
 }
 
 def abrir_excel():
@@ -164,7 +165,7 @@ def generar_reporte_y_salir():
 
     x, y = COORDENADAS["boton_generar_reporte"]
     mover_mouse_y_clic(x, y)  # Botón de "Generar Reporte"
-    time.sleep(5)
+    time.sleep(70)
 
     # Después de generar el reporte, esperar y enviar el archivo por WhatsApp
     enviar_reporte_por_whatsapp()
@@ -215,6 +216,10 @@ def toggle_wifi(interface_name="Wi-Fi", delay=5):
 
 def automatizar_proceso():
     toggle_wifi()
+    time.sleep(10)
+    conectar_sbdir()
+    time.sleep(15)
+    conectar_sbdir()
     time.sleep(15)
     """Automatiza todo el proceso de carga de archivos y generación de reportes."""
     logging.info("Iniciando proceso de carga de datos...")
@@ -250,7 +255,9 @@ def automatizar_proceso():
     # Después de cargar "jatmmon_indicadores", salir y generar el reporte
     logging.info("Cargando última hoja 'jatmmon_indicadores'. Saliendo y generando reporte.")
     generar_reporte_y_salir()
+    time.sleep(20)
     conectar_bncorp()
+    mover_mouse_y_clic(*COORDENADAS["cerrar"])
 
 # Ejecutar el proceso de automatización
 automatizar_proceso()

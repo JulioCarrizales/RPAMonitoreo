@@ -40,6 +40,8 @@ nombre_archivo_final = "truesight_noretiro.csv"
 def abrir_pagina():
     """Abre el enlace en el navegador predeterminado."""
     webbrowser.open("https://tsps-vip.bn.com.pe:8043")
+    mover_mouse_y_clic(*COORDENADAS["usuario"])
+    pyautogui.hotkey('win', 'up')
     time.sleep(5)
 
 def mover_mouse_y_clic(x, y, delay=0.2):
@@ -229,6 +231,6 @@ def proceso_completo_noretiros():
 
     # Cerrar la aplicación (si es necesario)
     mover_mouse_y_clic(*COORDENADAS["cerrar"])
-
+    
 # Ejecutar el proceso completo
 proceso_completo_noretiros()

@@ -1,3 +1,5 @@
+import time
+import schedule
 from errores import (
     automatizar_errores,
     mover_archivo_errores,
@@ -24,16 +26,24 @@ def proceso_completo():
         ruta_origen_errores,
         ruta_destino_errores
     )
+    time.sleep(5)
     automatizar_jatmmon()
     mover_archivo_jatmmon(
         nombre_archivo_jatmmon,
         ruta_origen_jatmmon,
         ruta_destino_jatmmon
     )
+    time.sleep(5)
     proceso_completo_noretiros()
+    time.sleep(5)
     proceso_completo_criticos()
+    time.sleep(5)
     automatizar_notificaciones()
     automatizar_proceso()
+    pass
 
-if __name__ == '__main__':
-    proceso_completo()
+schedule.every().hour.do(proceso_completo)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
