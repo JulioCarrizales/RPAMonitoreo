@@ -21,7 +21,9 @@ COORDENADAS = {
     "export_csv": (549, 402),
     "export_complete": (608, 501),
     "primera_fila_tabla": (83, 443),  # Coordenadas de la primera fila
-    "cerrar": (1890,18)
+    "cerrar": (1890,18),
+    "abrir":(1624,222)
+
 }
 
 # Credenciales de inicio de sesión
@@ -48,6 +50,8 @@ def escribir_texto(texto, delay=0.1):
     pyautogui.write(texto, interval=delay)
 
 def iniciar_sesion():
+    mover_mouse_y_clic(*COORDENADAS["abrir"])
+    time.sleep(3)
     """Inicia sesión en la aplicación."""
     mover_mouse_y_clic(*COORDENADAS["usuario"])
     escribir_texto(usuario)

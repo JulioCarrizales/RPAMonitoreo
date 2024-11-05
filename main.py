@@ -43,7 +43,8 @@ COORDENADAS = {
     "whatsapp_adjuntar": (989, 952),  # Coordenada del icono "adjuntar" en WhatsApp Web
     "whatsapp_adjuntar_archivo": (1078, 575),  # Coordenada del icono "adjuntar archivo"
     "whatsapp_enviar": (1858, 951),  # Coordenada del botón "Enviar"
-    "cerrar": (1890,18)
+    "cerrar": (1890,18),
+    "abrir_mai": (1618,219)
 }
 
 def abrir_excel():
@@ -53,6 +54,7 @@ def abrir_excel():
         excel = win32.Dispatch('Excel.Application')  # Crear una nueva instancia de Excel
         excel.Visible = True  # Mostrar Excel
         workbook = excel.Workbooks.Open(ruta_excel)  # Abrir el archivo
+        mover_mouse_y_clic(*COORDENADAS["abrir_mai"])
         logging.info(f"Archivo {ruta_excel} abierto correctamente.")
         return excel, workbook
     except Exception as e:
@@ -214,6 +216,17 @@ def toggle_wifi(interface_name="Wi-Fi", delay=5):
         print(f"Ocurrió un error inesperado: {e}")
 
 
+def cerrar_todo_excel():
+    try:
+        excel_app = win32.Dispatch("Excel.application")
+        for workbook in excel_app.Workbooks:
+            workbook.Close(SaveChanges = False)
+
+        excel_app.Quit()
+    except Exception as e:
+        print ("Error: ", e)
+
+
 def automatizar_proceso():
     toggle_wifi()
     time.sleep(10)
@@ -258,6 +271,8 @@ def automatizar_proceso():
     time.sleep(20)
     conectar_bncorp()
     mover_mouse_y_clic(*COORDENADAS["cerrar"])
+    pyautogui.press("enter")
+    cerrar_todo_excel()
 
 # Ejecutar el proceso de automatización
 automatizar_proceso()

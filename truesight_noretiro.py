@@ -24,7 +24,8 @@ COORDENADAS = {
     "export_complete": (615, 501),
     "primera_fila_tabla": (83, 443),  # Coordenadas de la primera fila
     "cerrar": (1890, 18),
-    "bloque": (81, 953)
+    "bloque": (81, 953),
+    "abrir":(1624,222)
 }
 
 # Credenciales de inicio de sesión
@@ -40,8 +41,9 @@ nombre_archivo_final = "truesight_noretiro.csv"
 def abrir_pagina():
     """Abre el enlace en el navegador predeterminado."""
     webbrowser.open("https://tsps-vip.bn.com.pe:8043")
+    mover_mouse_y_clic(*COORDENADAS["abrir"])
+    time.sleep(5)
     mover_mouse_y_clic(*COORDENADAS["usuario"])
-    pyautogui.hotkey('win', 'up')
     time.sleep(5)
 
 def mover_mouse_y_clic(x, y, delay=0.2):
