@@ -136,7 +136,7 @@ def enviar_reporte_por_whatsapp():
         # Buscar el contacto o número de teléfono
         pyautogui.click(412,235)  # Ajusta la coordenada para el cuadro de búsqueda de WhatsApp
         time.sleep(2)
-        escribir_texto("932289272")  # Escribir el número de contacto
+        escribir_texto("996327719")  # Escribir el número de contacto
         time.sleep(2)
         pyautogui.press('enter')  # Abrir el chat del contacto
         time.sleep(2)
@@ -229,11 +229,11 @@ def cerrar_todo_excel():
 
 def automatizar_proceso():
     toggle_wifi()
+    time.sleep(5)
+    conectar_sbdir()
+    time.sleep(5)
+    conectar_sbdir()
     time.sleep(10)
-    conectar_sbdir()
-    time.sleep(15)
-    conectar_sbdir()
-    time.sleep(15)
     """Automatiza todo el proceso de carga de archivos y generación de reportes."""
     logging.info("Iniciando proceso de carga de datos...")
 

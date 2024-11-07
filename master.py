@@ -1,6 +1,8 @@
 import time
 import schedule
 
+from wifiRPA import conectar_bncorp
+
 from errores import (
     automatizar_errores,
     mover_archivo_errores,
@@ -22,6 +24,8 @@ from NotificacionesLinea import automatizar_notificaciones
 from main import automatizar_proceso  # Importamos solo la función necesaria
 
 def proceso_completo():
+    conectar_bncorp()
+    conectar_bncorp()
     automatizar_errores()
     mover_archivo_errores(
         nombre_archivo_errores,
@@ -41,6 +45,8 @@ def proceso_completo():
     proceso_completo_criticos()
     time.sleep(5)
     automatizar_notificaciones()
+    from wifiRPA import conectar_sbdir
+    conectar_sbdir
     automatizar_proceso()
     pass
 

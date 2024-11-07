@@ -5,7 +5,7 @@ import win32com.client as win32
 import pythoncom
 from datetime import datetime
 import shutil
-from wifiRPA import *
+
 
 # Ruta del acceso directo que abre la aplicación
 ruta_acceso_directo = r'C:\Users\Administrador\Desktop\Reporte - copia\ErroresRemesas_MonitoreoCajeros.exe - Acceso directo.lnk'
@@ -54,7 +54,6 @@ def seleccionar_mes_anterior():
 
 
 def automatizar_errores():
-    conectar_bncorp()
     time.sleep(10)
 
     abrir_aplicacion()
