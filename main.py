@@ -44,7 +44,8 @@ COORDENADAS = {
     "whatsapp_adjuntar_archivo": (1078, 575),  # Coordenada del icono "adjuntar archivo"
     "whatsapp_enviar": (1858, 951),  # Coordenada del botón "Enviar"
     "cerrar": (1890,18),
-    "abrir_mai": (1618,219)
+    "abrir_mai": (1740,303),
+    "porsiacaso": (1325,1040)
 }
 
 def abrir_excel():
@@ -54,6 +55,8 @@ def abrir_excel():
         excel = win32.Dispatch('Excel.Application')  # Crear una nueva instancia de Excel
         excel.Visible = True  # Mostrar Excel
         workbook = excel.Workbooks.Open(ruta_excel)  # Abrir el archivo
+        mover_mouse_y_clic(*COORDENADAS["porsiacaso"])
+        pyautogui.press("enter")
         mover_mouse_y_clic(*COORDENADAS["abrir_mai"])
         logging.info(f"Archivo {ruta_excel} abierto correctamente.")
         return excel, workbook
@@ -136,7 +139,7 @@ def enviar_reporte_por_whatsapp():
         # Buscar el contacto o número de teléfono
         pyautogui.click(412,235)  # Ajusta la coordenada para el cuadro de búsqueda de WhatsApp
         time.sleep(2)
-        escribir_texto("996327719")  # Escribir el número de contacto
+        escribir_texto("Reportes ATM")  # Escribir el número de contacto
         time.sleep(2)
         pyautogui.press('enter')  # Abrir el chat del contacto
         time.sleep(2)

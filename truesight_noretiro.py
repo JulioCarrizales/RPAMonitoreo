@@ -12,12 +12,10 @@ pyautogui.FAILSAFE = True
 COORDENADAS = {
     "usuario": (958, 486),
     "contrasena": (933, 533),
-    "primer_filtro": (308, 229),
-    "segundo_filtro": (124, 284),
-    "tercer_filtro": (351, 296),
-    "cuarto_filtro": (95, 586),
-    "quinto_filtro": (1461, 639),
-    "total_events": (1671, 522),  # Coordenadas del número total de eventos
+    "primer_filtro": (357, 220),
+    "segundo_filtro": (395, 354),
+    "tercer_filtro": (547, 362),
+    "total_events": (1667, 683),  # Coordenadas del número total de eventos
     "expandir_tabla": (1729, 206),
     "export_boton": (962, 312),
     "export_csv": (551, 399),
@@ -71,10 +69,6 @@ def aplicar_filtros():
     mover_mouse_y_clic(*COORDENADAS["segundo_filtro"])
     time.sleep(1)
     mover_mouse_y_clic(*COORDENADAS["tercer_filtro"])
-    time.sleep(1)
-    mover_mouse_y_clic(*COORDENADAS["cuarto_filtro"])
-    time.sleep(1)
-    mover_mouse_y_clic(*COORDENADAS["quinto_filtro"])
     time.sleep(1)
 
 def obtener_total_eventos():

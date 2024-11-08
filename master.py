@@ -1,8 +1,6 @@
 import time
 import schedule
 
-from wifiRPA import conectar_bncorp
-
 from errores import (
     automatizar_errores,
     mover_archivo_errores,
@@ -17,15 +15,15 @@ from Jatmmon import (
     ruta_origen_jatmmon,
     ruta_destino_jatmmon
 )
+
 from truesight_noretiro import proceso_completo_noretiros
 from truesight_alertascriticas import proceso_completo_criticos
+
 from NotificacionesLinea import automatizar_notificaciones
 
 from main import automatizar_proceso  # Importamos solo la función necesaria
 
 def proceso_completo():
-    conectar_bncorp()
-    conectar_bncorp()
     automatizar_errores()
     mover_archivo_errores(
         nombre_archivo_errores,
@@ -45,8 +43,6 @@ def proceso_completo():
     proceso_completo_criticos()
     time.sleep(5)
     automatizar_notificaciones()
-    from wifiRPA import conectar_sbdir
-    conectar_sbdir
     automatizar_proceso()
     pass
 

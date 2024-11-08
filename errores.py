@@ -6,7 +6,6 @@ import pythoncom
 from datetime import datetime
 import shutil
 
-
 # Ruta del acceso directo que abre la aplicación
 ruta_acceso_directo = r'C:\Users\Administrador\Desktop\Reporte - copia\ErroresRemesas_MonitoreoCajeros.exe - Acceso directo.lnk'
 
@@ -24,11 +23,12 @@ COORDENADAS= {
      "Estado": (357,361),
      "Calcular":(1541,182),
      "Excel": (1541,352),
-     "Salir": (1580,79),
+     "Salir": (1530,517),
      "Cerrar_1":(1893,21),
      "Cerrar_2":(1247,324),
-     "Cerrar_3" : (1691,228),
-     "Extra": (1355,1052)
+     "Cerrar_3" : (1800,290),
+     "Extra": (1363,1043),
+     "Bug": (1498,310)
 }
 
 def mover_mouse_y_clic(x, y, delay=0.2):
@@ -85,11 +85,12 @@ def automatizar_errores():
     time.sleep(3)
 
     mover_mouse_y_clic(*COORDENADAS["Excel"])
-    time.sleep(60)  # Espera adicional para asegurarse de que Excel esté abierto
+    time.sleep(75)  # Espera adicional para asegurarse de que Excel esté abierto
 
+    
     mover_mouse_y_clic(*COORDENADAS["Extra"])
+    time.sleep(5)
     pyautogui.press("enter")
-
     mover_mouse_y_clic(*COORDENADAS["Cerrar_3"])
     time.sleep(3)
     pyautogui.press("enter")
@@ -98,11 +99,14 @@ def automatizar_errores():
     escribir_texto("rep_TicketsPendientes.xlsx")
 
     pyautogui.press("enter")
+    time.sleep(3)
     pyautogui.press("tab")
     pyautogui.press("enter")
+    time.sleep(3)
     mover_mouse_y_clic(*COORDENADAS["Salir"])
     mover_mouse_y_clic(*COORDENADAS["Cerrar_1"])
     mover_mouse_y_clic(*COORDENADAS["Cerrar_2"])
+    time.sleep(10)
 
 
 def mover_archivo_errores(nombre_archivo_errores, ruta_origen_errores, ruta_destino_errores):
