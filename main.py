@@ -55,7 +55,7 @@ def abrir_excel():
         excel = win32.Dispatch('Excel.Application')  # Crear una nueva instancia de Excel
         excel.Visible = True  # Mostrar Excel
         workbook = excel.Workbooks.Open(ruta_excel)  # Abrir el archivo
-        mover_mouse_y_clic(*COORDENADAS["porsiacaso"])
+        #mover_mouse_y_clic(*COORDENADAS["porsiacaso"])
         pyautogui.press("enter")
         mover_mouse_y_clic(*COORDENADAS["abrir_mai"])
         logging.info(f"Archivo {ruta_excel} abierto correctamente.")
@@ -132,6 +132,7 @@ def enviar_reporte_por_whatsapp():
     conectar_sbdir()
     """Función para enviar el archivo de Excel por WhatsApp usando pyautogui."""
     try:
+        
         # Abrir WhatsApp Web
         webbrowser.open("https://web.whatsapp.com/")
         logging.info("Abriendo WhatsApp Web...")

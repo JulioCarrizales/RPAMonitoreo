@@ -7,15 +7,20 @@ import csv
 
 # Asegúrate de que pyautogui no falle por fail-safe
 pyautogui.FAILSAFE = True
-
+   #153, 291
+    #350, 294
+    #98, 585
+    #1669,644
 # Coordenadas de elementos clave en la pantalla (ajusta según tu pantalla)
 COORDENADAS = {
     "usuario": (958, 486),
     "contrasena": (933, 533),
-    "primer_filtro": (357, 220),
-    "segundo_filtro": (395, 354),
-    "tercer_filtro": (547, 362),
-    "total_events": (1667, 683),  # Coordenadas del número total de eventos
+    "arbol":(305, 219),
+    "primer_filtro": (153, 291),
+    "segundo_filtro": (350, 294),
+    "tercer_filtro": (98, 585),
+    "cuarto_filtro": (1669,644),
+    "total_events": (1671,519),  # Coordenadas del número total de eventos
     "expandir_tabla": (1729, 206),
     "export_boton": (962, 312),
     "export_csv": (551, 399),
@@ -60,15 +65,19 @@ def iniciar_sesion():
     mover_mouse_y_clic(*COORDENADAS["contrasena"])
     escribir_texto(contrasena)
     pyautogui.press("enter")
-    time.sleep(5)
+    time.sleep(8)
 
 def aplicar_filtros():
     """Aplica filtros antes de la exportación."""
+    mover_mouse_y_clic(*COORDENADAS["arbol"])
+    time.sleep(1)
     mover_mouse_y_clic(*COORDENADAS["primer_filtro"])
     time.sleep(1)
     mover_mouse_y_clic(*COORDENADAS["segundo_filtro"])
     time.sleep(1)
     mover_mouse_y_clic(*COORDENADAS["tercer_filtro"])
+    time.sleep(1)
+    mover_mouse_y_clic(*COORDENADAS["cuarto_filtro"])
     time.sleep(1)
 
 def obtener_total_eventos():

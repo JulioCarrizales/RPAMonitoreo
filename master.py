@@ -15,7 +15,6 @@ from Jatmmon import (
     ruta_origen_jatmmon,
     ruta_destino_jatmmon
 )
-
 from truesight_noretiro import proceso_completo_noretiros
 from truesight_alertascriticas import proceso_completo_criticos
 

@@ -40,10 +40,10 @@ def automatizar_notificaciones():
     
     # Rellenar usuario y contraseña
     mover_mouse_y_clic(*COORDENADAS["campo_usuario"])
-    escribir_texto("jatoche")
+    escribir_texto("egonzalesz")
     
     mover_mouse_y_clic(*COORDENADAS["campo_password"])
-    escribir_texto("pamela97")
+    escribir_texto("Banco12.")
     
     # Clic en login
     mover_mouse_y_clic(*COORDENADAS["boton_login"])
