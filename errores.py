@@ -28,7 +28,8 @@ COORDENADAS= {
      "Cerrar_2":(1247,324),
      "Cerrar_3" : (1845,305),
      "Extra": (1363,1043),
-     "Bug": (1498,310)
+     "Bug": (1498,310),
+     "Uno": (700,206)
 }
 
 def mover_mouse_y_clic(x, y, delay=0.2):
@@ -78,6 +79,8 @@ def automatizar_errores():
 
     mover_mouse_y_clic(*COORDENADAS["Mes"])
     seleccionar_mes_anterior()
+    mover_mouse_y_clic(*COORDENADAS["Uno"])
+    pyautogui.press("1")
 
     mover_mouse_y_clic(*COORDENADAS["Estado"])
 
@@ -85,7 +88,7 @@ def automatizar_errores():
     time.sleep(3)
 
     mover_mouse_y_clic(*COORDENADAS["Excel"])
-    time.sleep(75)  # Espera adicional para asegurarse de que Excel esté abierto
+    time.sleep(90)  # Espera adicional para asegurarse de que Excel esté abierto
 
     
     mover_mouse_y_clic(*COORDENADAS["Extra"])
